@@ -7,7 +7,7 @@ export default function NewCustomerPage() {
       <PageHeader 
         title="Νέος Πελάτης" 
         subtitle="Καταχωρήστε έναν νέο πελάτη"
-        icon="fas fa-user"
+        icon="bi bi-person"
       />
       <CustomerForm />
     </div>

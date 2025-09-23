@@ -11,7 +11,7 @@ export default function EditCustomerPage() {
       <PageHeader 
         title="Επεξεργασία Πελάτη" 
         subtitle={`Τροποποίηση στοιχείων για πελάτη #${id}`}
-        icon="fas fa-user"
+        icon="bi bi-person"
       />
       <CustomerForm customerId={id} />
     </div>

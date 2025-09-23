@@ -93,19 +93,19 @@ function RentalList() {
       <div className="d-flex justify-content-between align-items-center mb-5">
         <div>
           <h1 className="display-6 fw-bold text-dark">
-            <i className="fas fa-key text-primary me-3"></i>
+            <i className="bi bi-key-fill text-primary me-3"></i>
             Ενοικιάσεις Σκούτερ
           </h1>
           <p className="text-muted mb-0">Διαχειριστείτε όλες τις ενοικιάσεις σας</p>
         </div>
         <Link href="/rentalspage/new" className="btn btn-modern btn-modern-primary btn-lg hover-lift">
-          <i className="fas fa-plus me-2"></i>Νέα Ενοικίαση
+          <i className="bi bi-plus-lg me-2"></i>Νέα Ενοικίαση
         </Link>
       </div>
 
       {error && (
         <div className="alert alert-modern alert-danger" role="alert">
-          <i className="fas fa-exclamation-triangle me-2"></i>
+          <i className="bi bi-exclamation-triangle me-2"></i>
           {error}
         </div>
       )}
@@ -114,13 +114,13 @@ function RentalList() {
       <div className="modern-card mb-5">
         <div className="card-body p-4">
           <h6 className="fw-bold mb-3">
-            <i className="fas fa-filter text-primary me-2"></i>
+            <i className="bi bi-funnel text-primary me-2"></i>
             Φίλτρα Αναζήτησης
           </h6>
           <div className="row g-3">
             <div className="col-md-6">
               <div className="modern-search">
-                <i className="fas fa-search search-icon"></i>
+                <i className="bi bi-search search-icon"></i>
                 <input
                   type="text"
                   className="form-control"
@@ -152,7 +152,7 @@ function RentalList() {
                 }}
                 style={{ height: '50px', borderRadius: '25px' }}
               >
-                <i className="fas fa-eraser me-2"></i>Καθαρισμός
+                <i className="bi bi-eraser me-2"></i>Καθαρισμός
               </button>
             </div>
           </div>
@@ -164,7 +164,7 @@ function RentalList() {
           <div className="modern-card">
             <div className="card-body p-5">
               <div className="empty-state">
-                <i className="fas fa-search text-muted mb-4" style={{ fontSize: '4rem', opacity: 0.3 }}></i>
+                <i className="bi bi-search text-muted mb-4" style={{ fontSize: '4rem', opacity: 0.3 }}></i>
                 <h4 className="text-muted mb-3">Δεν βρέθηκαν ενοικιάσεις</h4>
                 <p className="text-muted mb-4">
                   {searchTerm || statusFilter 
@@ -173,7 +173,7 @@ function RentalList() {
                   }
                 </p>
                 <Link href="/rentalspage/new" className="btn btn-modern btn-modern-primary btn-lg hover-lift">
-                  <i className="fas fa-plus me-2"></i>Δημιουργήστε την πρώτη ενοικίαση
+                  <i className="bi bi-plus-lg me-2"></i>Δημιουργήστε την πρώτη ενοικίαση
                 </Link>
               </div>
             </div>
@@ -183,11 +183,11 @@ function RentalList() {
         <div className="rentals-container row g-3">
           {filteredRentals.map((rental, index) => (
             <div key={rental.id} className="col-sm-6 col-lg-4 col-xl-3 stagger-in" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="rental-card modern-card hover-lift h-100" style={{ minHeight: '280px' }}>
+              <div className="rental-card modern-card hover-lift h-100" style={{ minHeight: '220px' }}>
               <div className="card-header bg-white border-0 pb-2">
                 <div className="d-flex justify-content-between align-items-center">
                     <h6 className="fw-bold mb-0 text-dark">
-                      <i className="fas fa-motorcycle text-primary me-2"></i>
+                      <i className="bi bi-scooter text-primary me-2"></i>
                       Ενοικίαση #{rental.id}
                     </h6>
                     <span className={`status-badge ${rental.status === 'Ενεργή' ? 'status-active' : rental.status === 'Ολοκληρωμένη' ? 'status-completed' : 'status-cancelled'}`}>
@@ -199,7 +199,7 @@ function RentalList() {
                 <div className="rental-info mb-3">
                     <div className="info-item mb-3">
                       <div className="info-header d-flex align-items-center mb-1">
-                        <i className="fas fa-motorcycle text-danger me-2"></i>
+                        <i className="bi bi-scooter text-danger me-2"></i>
                         <small className="text-muted fw-semibold">ΣΚΟΥΤΕΡ</small>
                       </div>
                       <div className="fw-bold">
@@ -218,7 +218,7 @@ function RentalList() {
                     
                     <div className="info-item mb-3">
                       <div className="info-header d-flex align-items-center mb-1">
-                        <i className="fas fa-user text-info me-2"></i>
+                        <i className="bi bi-person text-info me-2"></i>
                         <small className="text-muted fw-semibold">ΠΕΛΑΤΗΣ</small>
                       </div>
                       <div className="fw-bold">
@@ -228,7 +228,7 @@ function RentalList() {
                     
                     <div className="info-item mb-3">
                       <div className="info-header d-flex align-items-center mb-1">
-                        <i className="fas fa-calendar text-warning me-2"></i>
+                        <i className="bi bi-calendar-event text-warning me-2"></i>
                         <small className="text-muted fw-semibold">ΠΕΡΙΟΔΟΣ</small>
                       </div>
                       <div className="small">
@@ -238,7 +238,7 @@ function RentalList() {
                     
                     <div className="info-item mb-3">
                       <div className="info-header d-flex align-items-center mb-1">
-                        <i className="fas fa-euro-sign text-success me-2"></i>
+                        <i className="bi bi-currency-euro text-success me-2"></i>
                         <small className="text-muted fw-semibold">ΚΟΣΤΟΣ</small>
                       </div>
                       <div className="fw-bold text-success fs-5">€{rental.total_price}</div>
@@ -247,7 +247,7 @@ function RentalList() {
                     {rental.notes && (
                       <div className="info-item">
                         <div className="info-header d-flex align-items-center mb-1">
-                          <i className="fas fa-sticky-note text-secondary me-2"></i>
+                          <i className="bi bi-sticky text-secondary me-2"></i>
                           <small className="text-muted fw-semibold">ΣΗΜΕΙΩΣΕΙΣ</small>
                         </div>
                         <div className="small text-muted">{rental.notes}</div>
@@ -262,13 +262,13 @@ function RentalList() {
                       href={`/rentalspage/edit/${rental.id}`}
                       className="btn btn-outline-primary hover-btn"
                     >
-                      <i className="fas fa-edit me-2"></i>Επεξεργασία
+                      <i className="bi bi-pencil-square me-2"></i>Επεξεργασία
                     </Link>
                     <button
                       className="btn btn-outline-danger hover-btn"
                       onClick={() => handleDelete(rental.id)}
                     >
-                      <i className="fas fa-trash me-2"></i>Διαγραφή
+                      <i className="bi bi-trash me-2"></i>Διαγραφή
                     </button>
                   </div>
                 </div>
@@ -286,7 +286,7 @@ function RentalList() {
             <div className="modern-card">
               <div className="card-body p-4">
                 <h5 className="fw-bold mb-4">
-                  <i className="fas fa-chart-bar text-primary me-2"></i>
+                  <i className="bi bi-bar-chart text-primary me-2"></i>
                   Στατιστικά Ενοικιάσεων
                 </h5>
                 <div className="row g-4">

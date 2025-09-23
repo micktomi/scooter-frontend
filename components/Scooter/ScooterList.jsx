@@ -85,19 +85,19 @@ function ScooterList() {
       <div className="d-flex justify-content-between align-items-center mb-5">
         <div>
           <h1 className="display-6 fw-bold text-dark">
-            <i className="fas fa-motorcycle text-primary me-3"></i>
+            <i className="bi bi-scooter text-primary me-3"></i>
             Διαχείριση Σκούτερ
           </h1>
           <p className="text-muted mb-0">Διαχειριστείτε όλα τα σκούτερ σας</p>
         </div>
         <Link href="/scooterpage/new" className="btn btn-modern btn-modern-primary btn-lg hover-lift">
-          <i className="fas fa-plus me-2"></i>Νέο Σκούτερ
+          <i className="bi bi-plus-lg me-2"></i>Νέο Σκούτερ
         </Link>
       </div>
 
       {error && (
         <div className="alert alert-modern alert-danger" role="alert">
-          <i className="fas fa-exclamation-triangle me-2"></i>
+          <i className="bi bi-exclamation-triangle me-2"></i>
           {error}
         </div>
       )}
@@ -106,13 +106,13 @@ function ScooterList() {
       <div className="modern-card mb-5">
         <div className="card-body p-4">
           <h6 className="fw-bold mb-3">
-            <i className="fas fa-filter text-primary me-2"></i>
+            <i className="bi bi-funnel text-primary me-2"></i>
             Φίλτρα & Αναζήτηση
           </h6>
           <div className="row g-3">
             <div className="col-md-6">
               <div className="modern-search">
-                <i className="fas fa-search search-icon"></i>
+                <i className="bi bi-search search-icon"></i>
                 <input
                   type="text"
                   className="form-control"
@@ -129,21 +129,21 @@ function ScooterList() {
                   className={`btn hover-btn ${filter === 'all' ? 'btn-modern btn-modern-primary' : 'btn-outline-primary'}`}
                   onClick={() => setFilter('all')}
                 >
-                  <i className="fas fa-list me-1"></i> Όλα
+                  <i className="bi bi-list-ul me-1"></i> Όλα
                 </button>
                 <button 
                   type="button" 
                   className={`btn hover-btn ${filter === 'available' ? 'btn-success' : 'btn-outline-success'}`}
                   onClick={() => setFilter('available')}
                 >
-                  <i className="fas fa-check-circle me-1"></i> Διαθέσιμα
+                  <i className="bi bi-check-circle me-1"></i> Διαθέσιμα
                 </button>
                 <button 
                   type="button" 
                   className={`btn hover-btn ${filter === 'sold' ? 'btn-danger' : 'btn-outline-danger'}`}
                   onClick={() => setFilter('sold')}
                 >
-                  <i className="fas fa-times-circle me-1"></i> Πωλημένα
+                  <i className="bi bi-x-circle me-1"></i> Πωλημένα
                 </button>
               </div>
             </div>
@@ -156,7 +156,7 @@ function ScooterList() {
           <div className="modern-card">
             <div className="card-body p-5">
               <div className="empty-state">
-                <i className="fas fa-search text-muted mb-4" style={{ fontSize: '4rem', opacity: 0.3 }}></i>
+                <i className="bi bi-search text-muted mb-4" style={{ fontSize: '4rem', opacity: 0.3 }}></i>
                 <h4 className="text-muted mb-3">Δεν βρέθηκαν σκούτερ</h4>
                 <p className="text-muted mb-4">
                   {searchTerm || filter !== 'all' 
@@ -165,21 +165,21 @@ function ScooterList() {
                   }
                 </p>
                 <Link href="/scooterpage/new" className="btn btn-modern btn-modern-primary btn-lg hover-lift">
-                  <i className="fas fa-plus me-2"></i>Προσθέστε το πρώτο σκούτερ
+                  <i className="bi bi-plus-lg me-2"></i>Προσθέστε το πρώτο σκούτερ
                 </Link>
               </div>
             </div>
           </div>
         </div>
       ) : (
-        <div className="scooters-container row g-3">
-          {filteredScooters.map((scooter, index) => (
-            <div key={scooter.id} className="col-sm-6 col-lg-4 col-xl-3 stagger-in" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="scooter-card modern-card hover-lift h-100" style={{ minHeight: '280px' }}>
-                <div className="card-header bg-white border-0 pb-1">
-                  <div className="d-flex justify-content-between align-items-start">
+            <div className="scooters-container row g-3">
+              {filteredScooters.map((scooter, index) => (
+                <div key={scooter.id} className="col-sm-6 col-lg-4 col-xl-3 stagger-in" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div className="scooter-card modern-card hover-lift h-100" style={{ minHeight: '220px' }}>
+                  <div className="card-header bg-white border-0 pb-1">
+                    <div className="d-flex justify-content-between align-items-start">
                     <h6 className="fw-bold mb-0 text-dark" style={{ fontSize: '0.9rem', lineHeight: '1.2' }}>
-                      <i className="fas fa-motorcycle text-primary me-1"></i>
+                      <i className="bi bi-scooter text-primary me-1"></i>
                       {scooter.brand} {scooter.model}
                     </h6>
                     <span className={`status-badge ${scooter.is_sold ? 'status-cancelled' : 'status-active'}`} style={{ fontSize: '0.7rem', padding: '2px 6px' }}>
@@ -211,7 +211,7 @@ function ScooterList() {
                       {scooter.price && (
                         <div className="col-6">
                           <div className="text-muted" style={{ fontSize: '0.7rem' }}>ΤΙΜΗ</div>
-                          <div className="fw-bold text-success" style={{ fontSize: '0.9rem' }}>€{scooter.price}</div>
+                          <div className="fw-bold text-success" style={{ fontSize: '0.9rem' }}><i className="bi bi-currency-euro me-1"></i>{scooter.price}</div>
                         </div>
                       )}
                     </div>
@@ -224,14 +224,14 @@ function ScooterList() {
                       className="btn btn-outline-primary hover-btn py-1"
                       style={{ fontSize: '0.75rem' }}
                     >
-                      <i className="fas fa-edit me-1"></i>Επεξεργασία
+                      <i className="bi bi-pencil-square me-1"></i>Επεξεργασία
                     </Link>
                     <button
                       className="btn btn-outline-danger hover-btn py-1"
                       style={{ fontSize: '0.75rem' }}
                       onClick={() => handleDelete(scooter.id)}
                     >
-                      <i className="fas fa-trash me-1"></i>Διαγραφή
+                      <i className="bi bi-trash me-1"></i>Διαγραφή
                     </button>
                   </div>
                 </div>
@@ -248,14 +248,14 @@ function ScooterList() {
             <div className="modern-card">
               <div className="card-body p-4">
                 <h5 className="fw-bold mb-4">
-                  <i className="fas fa-chart-bar text-primary me-2"></i>
+                  <i className="bi bi-bar-chart text-primary me-2"></i>
                   Στατιστικά Σκούτερ
                 </h5>
                 <div className="row g-4">
                   <div className="col-md-3">
                     <div className="stat-card text-center p-3 rounded-3" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
                       <div className="stat-icon mb-2">
-                        <i className="fas fa-motorcycle text-white" style={{ fontSize: '1.5rem' }}></i>
+                        <i className="bi bi-scooter text-white" style={{ fontSize: '1.5rem' }}></i>
                       </div>
                       <h3 className="text-white fw-bold mb-1">{scooters.length}</h3>
                       <small className="text-white opacity-75">Συνολικά Σκούτερ</small>
@@ -264,7 +264,7 @@ function ScooterList() {
                   <div className="col-md-3">
                     <div className="stat-card text-center p-3 rounded-3" style={{ background: 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)' }}>
                       <div className="stat-icon mb-2">
-                        <i className="fas fa-check-circle text-white" style={{ fontSize: '1.5rem' }}></i>
+                        <i className="bi bi-check-circle text-white" style={{ fontSize: '1.5rem' }}></i>
                       </div>
                       <h3 className="text-white fw-bold mb-1">
                         {scooters.filter(s => !s.is_sold).length}
@@ -275,7 +275,7 @@ function ScooterList() {
                   <div className="col-md-3">
                     <div className="stat-card text-center p-3 rounded-3" style={{ background: 'linear-gradient(135deg, #f56565 0%, #e53e3e 100%)' }}>
                       <div className="stat-icon mb-2">
-                        <i className="fas fa-times-circle text-white" style={{ fontSize: '1.5rem' }}></i>
+                        <i className="bi bi-x-circle text-white" style={{ fontSize: '1.5rem' }}></i>
                       </div>
                       <h3 className="text-white fw-bold mb-1">
                         {scooters.filter(s => s.is_sold).length}
@@ -286,7 +286,7 @@ function ScooterList() {
                   <div className="col-md-3">
                     <div className="stat-card text-center p-3 rounded-3" style={{ background: 'linear-gradient(135deg, #26D0CE 0%, #1A2C5B 100%)' }}>
                       <div className="stat-icon mb-2">
-                        <i className="fas fa-euro-sign text-white" style={{ fontSize: '1.5rem' }}></i>
+                        <i className="bi bi-currency-euro text-white" style={{ fontSize: '1.5rem' }}></i>
                       </div>
                       <h3 className="text-white fw-bold mb-1">
                         €{scooters.filter(s => s.price).reduce((sum, s) => sum + (s.price || 0), 0).toFixed(2)}

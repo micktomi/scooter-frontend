@@ -2,6 +2,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./globals.css";
 import "../styles/professional.css";
 import "../styles/global.css";
+import "../styles/enhanced.css";
+import "../styles/animations.css";
 import Sidebar from "../components/Layout/Sidebar";
 
 export const metadata = {

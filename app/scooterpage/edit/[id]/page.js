@@ -11,7 +11,7 @@ export default function EditScooterPage() {
       <PageHeader 
         title="Επεξεργασία Σκούτερ" 
         subtitle={`Τροποποίηση στοιχείων για σκούτερ #${id}`}
-        icon="fas fa-motorcycle"
+        icon="bi bi-scooter"
       />
       <ScooterForm scooterId={id} />
     </div>

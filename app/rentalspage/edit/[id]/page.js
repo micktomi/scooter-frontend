@@ -11,7 +11,7 @@ export default function EditRentalPage() {
       <PageHeader 
         title="Επεξεργασία Ενοικίασης" 
         subtitle={`Τροποποίηση στοιχείων ενοικίασης #${id}`}
-        icon="fas fa-receipt"
+        icon="bi bi-receipt"
       />
       <RentalForm rentalId={id} />
     </div>

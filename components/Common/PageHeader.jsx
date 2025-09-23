@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 
-export default function PageHeader({ title, subtitle, icon = 'fas fa-folder-open', right = null }) {
+export default function PageHeader({ title, subtitle, icon = 'bi bi-folder2-open', right = null }) {
   return (
     <div className="d-flex justify-content-between align-items-center mb-4">
       <div>
@@ -21,4 +21,3 @@ export default function PageHeader({ title, subtitle, icon = 'fas fa-folder-open
     </div>
   );
 }
-

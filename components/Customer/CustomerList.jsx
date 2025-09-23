@@ -66,19 +66,19 @@ function CustomerList() {
       <div className="d-flex justify-content-between align-items-center mb-5">
         <div>
           <h1 className="display-6 fw-bold text-dark">
-            <i className="fas fa-users text-primary me-3"></i>
+            <i className="bi bi-people text-primary me-3"></i>
             Διαχείριση Πελατών
           </h1>
           <p className="text-muted mb-0">Διαχειριστείτε όλους τους πελάτες σας</p>
         </div>
         <Link href="/customerpage/new" className="btn btn-modern btn-modern-primary btn-lg hover-lift">
-          <i className="fas fa-plus me-2"></i>Νέος Πελάτης
+          <i className="bi bi-plus-lg me-2"></i>Νέος Πελάτης
         </Link>
       </div>
 
       {error && (
         <div className="alert alert-modern alert-danger" role="alert">
-          <i className="fas fa-exclamation-triangle me-2"></i>
+          <i className="bi bi-exclamation-triangle me-2"></i>
           {error}
         </div>
       )}
@@ -93,7 +93,7 @@ function CustomerList() {
           <div className="row g-3">
             <div className="col-md-8">
               <div className="modern-search">
-                <i className="fas fa-search search-icon"></i>
+            <i className="bi bi-search search-icon"></i>
                 <input
                   type="text"
                   className="form-control"
@@ -109,7 +109,7 @@ function CustomerList() {
                 onClick={() => setSearchTerm('')}
                 style={{ height: '50px', borderRadius: '25px' }}
               >
-                <i className="fas fa-eraser me-2"></i>Καθαρισμός
+                <i className="bi bi-eraser me-2"></i>Καθαρισμός
               </button>
             </div>
           </div>
@@ -140,11 +140,11 @@ function CustomerList() {
         <div className="customers-container row g-3">
           {filteredCustomers.map((customer, index) => (
             <div key={customer.id} className="col-sm-6 col-lg-4 col-xl-3 stagger-in" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="customer-card modern-card hover-lift h-100" style={{ minHeight: '280px' }}>
+              <div className="customer-card modern-card hover-lift h-100" style={{ minHeight: '220px' }}>
                 <div className="card-header bg-white border-0 pb-1">
                   <div className="d-flex justify-content-between align-items-start">
                     <h6 className="fw-bold mb-0 text-dark" style={{ fontSize: '0.9rem', lineHeight: '1.2' }}>
-                      <i className="fas fa-user text-primary me-1"></i>
+                      <i className="bi bi-person text-primary me-1"></i>
                       {customer.name}
                     </h6>
                     <span className="status-badge status-active" style={{ fontSize: '0.7rem', padding: '2px 6px' }}>
@@ -191,14 +191,14 @@ function CustomerList() {
                       className="btn btn-outline-primary hover-btn py-1"
                       style={{ fontSize: '0.75rem' }}
                     >
-                      <i className="fas fa-edit me-1"></i>Επεξεργασία
+                      <i className="bi bi-pencil-square me-1"></i>Επεξεργασία
                     </Link>
                     <button
                       className="btn btn-outline-danger hover-btn py-1"
                       style={{ fontSize: '0.75rem' }}
                       onClick={() => handleDelete(customer.id)}
                     >
-                      <i className="fas fa-trash me-1"></i>Διαγραφή
+                      <i className="bi bi-trash me-1"></i>Διαγραφή
                     </button>
                   </div>
                 </div>

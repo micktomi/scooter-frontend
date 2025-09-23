@@ -7,7 +7,7 @@ export default function NewScooterPage() {
       <PageHeader 
         title="Νέο Σκούτερ" 
         subtitle="Καταχωρήστε ένα νέο σκούτερ στο σύστημα"
-        icon="fas fa-motorcycle"
+        icon="bi bi-scooter"
       />
       <ScooterForm />
     </div>

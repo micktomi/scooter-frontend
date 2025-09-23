@@ -7,7 +7,7 @@ export default function NewRentalPage() {
       <PageHeader 
         title="Νέα Ενοικίαση" 
         subtitle="Καταχωρήστε νέα ενοικίαση σκούτερ"
-        icon="fas fa-receipt"
+        icon="bi bi-receipt"
       />
       <RentalForm />
     </div>

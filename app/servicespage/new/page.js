@@ -7,7 +7,7 @@ export default function NewServicePage() {
       <PageHeader 
         title="Νέα Υπηρεσία" 
         subtitle="Καταχωρήστε μια νέα υπηρεσία"
-        icon="fas fa-tools"
+        icon="bi bi-wrench-adjustable"
       />
       <ServiceForm />
     </div>

@@ -11,7 +11,7 @@ export default function EditServicePage() {
       <PageHeader 
         title="Επεξεργασία Υπηρεσίας" 
         subtitle={`Τροποποίηση στοιχείων υπηρεσίας #${id}`}
-        icon="fas fa-tools"
+        icon="bi bi-wrench-adjustable"
       />
       <ServiceForm serviceId={id} />
     </div>

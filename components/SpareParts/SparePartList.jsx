@@ -82,10 +82,10 @@ function SparePartList() {
         </div>
         <div className="d-flex gap-2">
           <Link href="/spare-parts/sell" className="btn btn-modern btn-modern-success btn-lg hover-lift">
-            <i className="fas fa-shopping-cart me-2"></i>Πώληση
+            <i className="bi bi-cart me-2"></i>Πώληση
           </Link>
           <Link href="/spare-parts/new" className="btn btn-modern btn-modern-primary btn-lg hover-lift">
-            <i className="fas fa-plus me-2"></i>Νέο Ανταλλακτικό
+            <i className="bi bi-plus-lg me-2"></i>Νέο Ανταλλακτικό
           </Link>
         </div>
       </div>
@@ -101,13 +101,13 @@ function SparePartList() {
       <div className="modern-card mb-5">
         <div className="card-body p-4">
           <h6 className="fw-bold mb-3">
-            <i className="fas fa-filter text-primary me-2"></i>
+            <i className="bi bi-funnel text-primary me-2"></i>
             Φίλτρα & Αναζήτηση
           </h6>
           <div className="row g-3">
             <div className="col-md-6">
               <div className="modern-search">
-                <i className="fas fa-search search-icon"></i>
+                <i className="bi bi-search search-icon"></i>
                 <input
                   type="text"
                   className="form-control"
@@ -124,21 +124,21 @@ function SparePartList() {
                   className={`btn hover-btn ${filter === 'all' ? 'btn-modern btn-modern-primary' : 'btn-outline-primary'}`}
                   onClick={() => setFilter('all')}
                 >
-                  <i className="fas fa-list me-1"></i> Όλα
+                <i className="bi bi-list-ul me-1"></i> Όλα
                 </button>
                 <button 
                   type="button" 
                   className={`btn hover-btn ${filter === 'low-stock' ? 'btn-danger' : 'btn-outline-danger'}`}
                   onClick={() => setFilter('low-stock')}
                 >
-                  <i className="fas fa-exclamation-triangle me-1"></i> Χαμηλό Απόθεμα
+                <i className="bi bi-exclamation-triangle me-1"></i> Χαμηλό Απόθεμα
                 </button>
                 <button 
                   type="button" 
                   className={`btn hover-btn ${filter === 'adequate' ? 'btn-success' : 'btn-outline-success'}`}
                   onClick={() => setFilter('adequate')}
                 >
-                  <i className="fas fa-check-circle me-1"></i> Επαρκές
+                <i className="bi bi-check-circle me-1"></i> Επαρκές
                 </button>
               </div>
             </div>
@@ -151,7 +151,7 @@ function SparePartList() {
           <div className="modern-card">
             <div className="card-body p-5">
               <div className="empty-state">
-              <i className="bi bi-nut text-muted mb-4" style={{ fontSize: '4rem', opacity: 0.3 }}></i>
+                <i className="bi bi-nut text-muted mb-4" style={{ fontSize: '4rem', opacity: 0.3 }}></i>
                 <h4 className="text-muted mb-3">Δεν βρέθηκαν ανταλλακτικά</h4>
                 <p className="text-muted mb-4">
                   {searchTerm || filter !== 'all' 
@@ -160,7 +160,7 @@ function SparePartList() {
                   }
                 </p>
                 <Link href="/spare-parts/new" className="btn btn-modern btn-modern-primary btn-lg hover-lift">
-                  <i className="fas fa-plus me-2"></i>Προσθέστε το πρώτο ανταλλακτικό
+                  <i className="bi bi-plus-lg me-2"></i>Προσθέστε το πρώτο ανταλλακτικό
                 </Link>
               </div>
             </div>
@@ -170,7 +170,7 @@ function SparePartList() {
         <div className="spareparts-container row g-3">
           {filteredSpareParts.map((part, index) => (
             <div key={part.id} className="col-sm-6 col-lg-4 col-xl-3 stagger-in" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="sparepart-card modern-card hover-lift h-100" style={{ minHeight: '280px' }}>
+              <div className="sparepart-card modern-card hover-lift h-100" style={{ minHeight: '220px' }}>
               <div className="card-header bg-white border-0 pb-2">
                   <div className="d-flex justify-content-between align-items-center">
                     <h6 className="fw-bold mb-0 text-dark">
@@ -187,7 +187,7 @@ function SparePartList() {
                     {part.code && (
                       <div className="info-item mb-3">
                         <div className="info-header d-flex align-items-center mb-1">
-                          <i className="fas fa-barcode text-info me-2"></i>
+                      <i className="bi bi-upc-scan text-info me-2"></i>
                           <small className="text-muted fw-semibold">ΚΩΔΙΚΟΣ</small>
                         </div>
                         <div className="fw-bold">{part.code}</div>
@@ -197,7 +197,7 @@ function SparePartList() {
                     {part.category && (
                       <div className="info-item mb-3">
                         <div className="info-header d-flex align-items-center mb-1">
-                          <i className="fas fa-tags text-warning me-2"></i>
+                          <i className="bi bi-tags text-warning me-2"></i>
                           <small className="text-muted fw-semibold">ΚΑΤΗΓΟΡΙΑ</small>
                         </div>
                         <div className="fw-bold">{part.category}</div>
@@ -206,7 +206,7 @@ function SparePartList() {
                     
                     <div className="info-item mb-3">
                       <div className="info-header d-flex align-items-center mb-1">
-                        <i className="fas fa-boxes text-secondary me-2"></i>
+                        <i className="bi bi-box-seam text-secondary me-2"></i>
                         <small className="text-muted fw-semibold">ΑΠΟΘΕΜΑ</small>
                       </div>
                       <div className={`fw-bold fs-5 ${part.stock <= part.min_stock ? 'text-danger' : 'text-success'}`}>
